@@ -33,6 +33,7 @@
 
 #include <vector>
 #include <math.h>
+#define M_PI		3.14159265358979323846
 
 #if defined(HAVE_EIGEN) && !defined(__CUDACC__) //prevent including Eigen in cuda files
 #define USE_EIGEN

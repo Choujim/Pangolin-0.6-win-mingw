@@ -25,7 +25,7 @@ add_dependencies(_glew __glew)
 set_target_properties(_glew PROPERTIES
     IMPORTED_LOCATION_RELWITHDEBINFO ${CMAKE_INSTALL_PREFIX}/lib/libglew.dll
     IMPORTED_LOCATION_RELEASE ${CMAKE_INSTALL_PREFIX}/lib/libglew.dll
-    IMPORTED_LOCATION_DEBUG   ${CMAKE_INSTALL_PREFIX}/lib/glewd.lib
+    IMPORTED_LOCATION_DEBUG   ${CMAKE_INSTALL_PREFIX}/lib/libglewd.dll
 )
 
 set(GLEW_FOUND true PARENT_SCOPE)
@@ -37,7 +37,7 @@ set(ExternConfig "${ExternConfig}
   set_target_properties(_glew PROPERTIES
     IMPORTED_LOCATION_RELWITHDEBINFO \"${CMAKE_INSTALL_PREFIX}/lib/libglew.dll\"
     IMPORTED_LOCATION_RELEASE \"${CMAKE_INSTALL_PREFIX}/lib/libglew.dll\"
-    IMPORTED_LOCATION_DEBUG   \"${CMAKE_INSTALL_PREFIX}/lib/glewd.lib\"
+    IMPORTED_LOCATION_DEBUG   \"${CMAKE_INSTALL_PREFIX}/lib/libglewd.dll\"
   )")
 endif()
 
@@ -64,7 +64,7 @@ add_dependencies(_zlib __zlib)
 set_target_properties(_zlib PROPERTIES
     IMPORTED_LOCATION_RELEASE ${CMAKE_INSTALL_PREFIX}/lib/libzlibstatic.a
     IMPORTED_LOCATION_RELWITHDEBINFO ${CMAKE_INSTALL_PREFIX}/lib/libzlibstatic.a
-    IMPORTED_LOCATION_DEBUG   ${CMAKE_INSTALL_PREFIX}/lib/zlibstaticd.lib
+    IMPORTED_LOCATION_DEBUG   ${CMAKE_INSTALL_PREFIX}/lib/libzlibstatic.a
 )
 
 #########################################################
@@ -93,7 +93,7 @@ add_dependencies(_libpng __libpng)
 set_target_properties(_libpng PROPERTIES
     IMPORTED_LOCATION_RELWITHDEBINFO ${CMAKE_INSTALL_PREFIX}/lib/libpng16.a
 	  IMPORTED_LOCATION_RELEASE ${CMAKE_INSTALL_PREFIX}/lib/libpng16.a
-    IMPORTED_LOCATION_DEBUG   ${CMAKE_INSTALL_PREFIX}/lib/libpng16_staticd.lib
+    IMPORTED_LOCATION_DEBUG   ${CMAKE_INSTALL_PREFIX}/lib/libpng16.a
 )
 
 set(PNG_FOUND true PARENT_SCOPE)
@@ -105,13 +105,13 @@ set(ExternConfig "${ExternConfig}
   set_target_properties(_zlib PROPERTIES
     IMPORTED_LOCATION_RELEASE \"${CMAKE_INSTALL_PREFIX}/lib/libzlibstatic.a\"
     IMPORTED_LOCATION_RELWITHDEBINFO \"${CMAKE_INSTALL_PREFIX}/lib/libzlibstatic.a\"
-    IMPORTED_LOCATION_DEBUG   \"${CMAKE_INSTALL_PREFIX}/lib/zlibstaticd.lib\"
+    IMPORTED_LOCATION_DEBUG   \"${CMAKE_INSTALL_PREFIX}/lib/libzlibstatic.a\"
   )
   add_library(_libpng STATIC IMPORTED)
   set_target_properties(_libpng PROPERTIES
     IMPORTED_LOCATION_RELEASE \"${CMAKE_INSTALL_PREFIX}/lib/libpng16.a\"
     IMPORTED_LOCATION_RELWITHDEBINFO \"${CMAKE_INSTALL_PREFIX}/lib/libpng16.a\"
-    IMPORTED_LOCATION_DEBUG   \"${CMAKE_INSTALL_PREFIX}/lib/libpng16_staticd.lib\"
+    IMPORTED_LOCATION_DEBUG   \"${CMAKE_INSTALL_PREFIX}/lib/libpng16.a\"
   )")
 endif()
 
